@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Product } from "./product";
 
+declare let alertify: any;
+
 @Component({
   selector: "app-product",
   templateUrl: "./product.component.html",
@@ -55,7 +57,7 @@ export class ProductComponent implements OnInit {
   ];
 
   showAlert(product) {
-    alert("Ürünün adı :" + product);
+    alertify.success("Ürünün adı :" + product);
   }
   ngOnInit() {}
 }
