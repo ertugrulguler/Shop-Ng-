@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Product } from "./product";
-
-declare let alertify: any;
+import { AlertifyService } from "../services/alertify.service";
+// declare let alertify: any;
 
 @Component({
   selector: "app-product",
@@ -9,7 +9,7 @@ declare let alertify: any;
   styleUrls: ["./product.component.css"]
 })
 export class ProductComponent implements OnInit {
-  constructor() {}
+  constructor(private alertifyService: AlertifyService) {}
 
   title = "Ürün Listesi";
   filterText = "";
@@ -57,7 +57,8 @@ export class ProductComponent implements OnInit {
   ];
 
   showAlert(product) {
-    alertify.success("Ürünün adı :" + product);
+    // alertify.success("Ürünün adı :" + product);
+    this.alertifyService.error("ürünün adı: " + product);
   }
   ngOnInit() {}
 }
