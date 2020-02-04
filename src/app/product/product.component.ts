@@ -54,5 +54,8 @@ export class ProductComponent implements OnInit {
     }
   ];
 
+  showAlert(product) {
+    alert("Ürünün adı :" + product);
+  }
   ngOnInit() {}
 }
