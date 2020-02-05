@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Product } from "./product";
 import { AlertifyService } from "../services/alertify.service";
 // declare let alertify: any;
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-product",
@@ -9,56 +10,23 @@ import { AlertifyService } from "../services/alertify.service";
   styleUrls: ["./product.component.css"]
 })
 export class ProductComponent implements OnInit {
-  constructor(private alertifyService: AlertifyService) {}
+  constructor(
+    private alertifyService: AlertifyService,
+    private http: HttpClient
+  ) {}
 
   title = "Ürün Listesi";
   filterText = "";
-  products: Product[] = [
-    {
-      id: 1,
-      name: "Laptop",
-      price: 2500,
-      categoryId: 1,
-      description: "Asus zenBook",
-      imageUrl: "https://picsum.photos/200/200"
-    },
-    {
-      id: 2,
-      name: "Laptop",
-      price: 2500,
-      categoryId: 1,
-      description: "Lenova",
-      imageUrl: "https://picsum.photos/200/200"
-    },
-    {
-      id: 3,
-      name: "Mouse",
-      price: 50,
-      categoryId: 2,
-      description: "A4 Tech",
-      imageUrl: "https://picsum.photos/200/200"
-    },
-    {
-      id: 4,
-      name: "Telefon",
-      price: 5000,
-      categoryId: 3,
-      description: "İphone 7",
-      imageUrl: "https://picsum.photos/200/200"
-    },
-    {
-      id: 5,
-      name: "Telefon",
-      price: 6500,
-      categoryId: 3,
-      description: "İphone 7 Plus",
-      imageUrl: "https://picsum.photos/200/200"
-    }
-  ];
-
+  products: Product[];
+  apiEndPoint = "http://localhost:3000/products";
   showAlert(product) {
     // alertify.success("Ürünün adı :" + product);
     this.alertifyService.error("ürünün adı: " + product);
   }
-  ngOnInit() {}
+  ngOnInit() {
+    this.http.get<Product[]>(this.apiEndPoint).subscribe(response => {
+      this.products = response;
+      console.log(this.products);
+    });
+  }
 }
