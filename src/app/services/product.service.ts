@@ -10,8 +10,12 @@ export class ProductService {
 
   apiEndPoint = "http://localhost:3000/products";
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiEndPoint).pipe(
+  getProducts(categoryId): Observable<Product[]> {
+    let newEndPoint = this.apiEndPoint;
+    if (categoryId) {
+      newEndPoint += "?categoryId=" + categoryId;
+    }
+    return this.http.get<Product[]>(newEndPoint).pipe(
       tap(response => console.log(JSON.stringify(response))),
       catchError(this.handleError)
     );

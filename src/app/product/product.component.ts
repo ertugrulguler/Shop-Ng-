@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Product } from "./product";
 import { AlertifyService } from "../services/alertify.service";
 import { ProductService } from "../services/product.service";
+import { ActivatedRoute } from "@angular/router";
 // declare let alertify: any;
 
 @Component({
@@ -13,7 +14,8 @@ import { ProductService } from "../services/product.service";
 export class ProductComponent implements OnInit {
   constructor(
     private alertifyService: AlertifyService,
-    private productService: ProductService
+    private productService: ProductService,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   title = "Ürün Listesi";
@@ -24,8 +26,10 @@ export class ProductComponent implements OnInit {
     this.alertifyService.error("ürünün adı: " + product);
   }
   ngOnInit() {
-    this.productService.getProducts().subscribe(response => {
-      this.products = response;
+    this.activatedRoute.params.subscribe(params => {
+      this.productService.getProducts(params.categoryId).subscribe(response => {
+        this.products = response;
+      });
     });
   }
 }
