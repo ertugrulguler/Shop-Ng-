@@ -9,7 +9,7 @@ import { NavComponent } from "./nav/nav.component";
 import { ProductComponent } from "./product/product.component";
 import { CategoryComponent } from "./category/category.component";
 import { ProductFilterPipe } from "./product/product-filter.pipe";
-import { ProductAddForms1Component } from './product/product-add-forms1/product-add-forms1.component';
+import { ProductAddForms1Component } from "./product/product-add-forms1/product-add-forms1.component";
 
 @NgModule({
   declarations: [

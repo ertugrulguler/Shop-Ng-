@@ -1,4 +1,5 @@
-{"products":[
+{
+  "products": [
     {
       "id": 1,
       "name": "Laptop",
@@ -38,7 +39,24 @@
       "categoryId": 2,
       "description": "İphone 7 Plus",
       "imageUrl": "https://picsum.photos/200/200"
+    },
+    {
+      "name": "Telefon",
+      "description": "İphone 7 Plus",
+      "price": "6000",
+      "imageUrl": "https://productimages.hepsiburada.net/s/31/1500/10352775299122.jpg",
+      "categoryId": "2",
+      "id": 6
     }
   ],
-"categories":[{"id":1,"name":"Bilgisayar"},{"id":2,"name":"Elektronik"}]
+  "categories": [
+    {
+      "id": 1,
+      "name": "Bilgisayar"
+    },
+    {
+      "id": 2,
+      "name": "Elektronik"
+    }
+  ]
 }

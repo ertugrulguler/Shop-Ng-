@@ -1,5 +1,5 @@
 <h3>Ürün Ekleme Sayfası</h3>
-<form #productAddForm="ngForm" (ngSubmit)="createProduct(productAddForm)">
+<form #productAddForm="ngForm" (ngSubmit)="add(productAddForm)">
     <div class="form-group">
         <input type="text" class="form-control" placeholder="Ürün Adını giriniz..." #name="ngModel"
             [(ngModel)]="model.name" name="name" id="name" required>
@@ -30,5 +30,6 @@
             <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
         </select>
     </div>
+    <button type="submit" class="btn btn-success" [disabled]="productAddForm.invalid">Ürünü Ekle</button>
 
 </form>
