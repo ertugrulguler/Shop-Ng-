@@ -10,6 +10,7 @@ import { ProductComponent } from "./product/product.component";
 import { CategoryComponent } from "./category/category.component";
 import { ProductFilterPipe } from "./product/product-filter.pipe";
 import { ProductAddForms1Component } from "./product/product-add-forms1/product-add-forms1.component";
+import { ProductAddForms2Component } from './product/product-add-forms2/product-add-forms2.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductAddForms1Component } from "./product/product-add-forms1/product-
     ProductComponent,
     CategoryComponent,
     ProductFilterPipe,
-    ProductAddForms1Component
+    ProductAddForms1Component,
+    ProductAddForms2Component
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
