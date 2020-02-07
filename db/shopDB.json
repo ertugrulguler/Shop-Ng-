@@ -47,6 +47,14 @@
       "imageUrl": "https://productimages.hepsiburada.net/s/31/1500/10352775299122.jpg",
       "categoryId": "2",
       "id": 6
+    },
+    {
+      "name": "Buz Dolabı",
+      "description": "Hitachi-R W845614 ",
+      "imageUrl": "https://enplus-img.ticimaxcdn.com/Uploads/UrunResimleri/buyuk/hitachi-r-wb800pru5-buzdolabi-xgr-7c3d.jpg",
+      "price": "2.299,00",
+      "categoryId": "2",
+      "id": 7
     }
   ],
   "categories": [
