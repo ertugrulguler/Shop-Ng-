@@ -4,8 +4,11 @@
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
-        <a class="nav-link" routerLink="/login">
+        <a *ngIf="isLoggedin()==false" class="nav-link" routerLink="/login">
           Login
+        </a>
+        <a *ngIf="isLoggedin()==true" (click)="isLogout()" class="nav-link">
+          Logout
         </a>
       </li>
     </ul>
